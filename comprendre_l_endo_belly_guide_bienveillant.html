@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprendre l'Endo Belly — Guide Doux, Détaillé & Sourcé</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chargement de Chart.js pour les graphiques interactifs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Police Google Fonts : Plus Jakarta Sans & Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        sand: '#F5EFE6',
+                        terracotta: {
+                            light: '#F9EAE8',
+                            DEFAULT: '#D9776C',
+                            dark: '#A6463C'
+                        },
+                        sage: {
+                            light: '#EBF1ED',
+                            DEFAULT: '#6B8E78',
+                            dark: '#415D4B'
+                        },
+                        lavender: {
+                            light: '#EFEBF7',
+                            DEFAULT: '#8E7DBE',
+                            dark: '#5B4B8A'
+                        },
+                        charcoal: '#23272A'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Lora"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #23272A;
+        }
+        /* Animations douces pour les éléments interactifs */
+        .soft-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .soft-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -8px rgba(35, 39, 42, 0.08);
+        }
+        .step-btn.active {
+            border-color: #D9776C;
+            background-color: #F9EAE8;
+        }
+        .nav-link.active {
+            background-color: #F9EAE8;
+            color: #A6463C;
+            font-weight: 700;
+            border-color: rgba(217, 119, 108, 0.4);
+        }
+        .pulse-gentle {
+            animation: pulseGentle 3s infinite ease-in-out;
+        }
+        @keyframes pulseGentle {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+        /* Style personnalisé pour le curseur du cycle */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #D9776C;
+            border: 3px solid #FDFBF7;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            cursor: pointer;
+            margin-top: -7px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #E5DDD3;
+            border-radius: 999px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-terracotta-light selection:text-terracotta-dark">
+
+    <!-- Barre de navigation douce et flottante avec contraste élevé et état actif par défaut sur Mécanisme -->
+    <nav class="sticky top-0 z-40 bg-cream/95 backdrop-blur-md border-b border-sand shadow-xs">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-2">
+            <a href="#" class="flex items-center gap-2.5 text-charcoal font-serif font-semibold text-lg">
+                <span class="w-8 h-8 rounded-full bg-terracotta-light text-terracotta-dark flex items-center justify-center">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </span>
+                <span>Comprendre l'Endo Belly</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold">
+                <a href="#mecanisme" data-nav="mecanisme" class="nav-link active px-3.5 py-1.5 rounded-full border border-transparent text-charcoal hover:bg-sand transition">Le mécanisme</a>
+                <a href="#idees-recues" data-nav="idees-recues" class="nav-link px-3.5 py-1.5 rounded-full border border-transparent text-charcoal hover:bg-sand transition">Idées reçues</a>
+                <a href="#etudes" data-nav="etudes" class="nav-link px-3.5 py-1.5 rounded-full border border-transparent text-charcoal hover:bg-sand transition">Les études</a>
+                <a href="#soulager" data-nav="soulager" class="nav-link px-3.5 py-1.5 rounded-full border border-transparent text-charcoal hover:bg-sand transition">Se soulager</a>
+                <a href="#anticiper" data-nav="anticiper" class="nav-link px-3.5 py-1.5 rounded-full border border-transparent text-charcoal hover:bg-sand transition">Anticiper</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. EN-TÊTE RASSURANT (HERO SECTION) -->
+    <header class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-12 sm:pt-14 sm:pb-14">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-5">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-lavender-light text-lavender-dark text-xs sm:text-sm font-semibold">
+                    <span>🌿</span>
+                    <span>Guide explicatif bienveillant, biologique & sourcé</span>
+                </div>
+
+                <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-charcoal leading-tight">
+                    Pourquoi le bas-ventre gonfle pendant les règles ?
+                </h1>
+
+                <p class="text-base sm:text-lg text-charcoal/85 leading-relaxed">
+                    Comprendre en détail l'<strong>« endo belly »</strong> : l'orage inflammatoire, l'effet domino sur l'intestin, les preuves scientifiques et les gestes concrets pour t'apaiser.
+                </p>
+
+                <!-- Encadré rassurant d'entrée -->
+                <div class="p-5 sm:p-6 rounded-2xl bg-sage-light/85 border border-sage/35 flex items-start gap-4 shadow-xs">
+                    <div class="w-10 h-10 rounded-full bg-sage-dark text-white flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div class="space-y-1.5">
+                        <h2 class="font-semibold text-sage-dark text-base sm:text-lg">
+                            Oui, c’est un phénomène biologique normal et très fréquent.
+                        </h2>
+                        <p class="text-sm sm:text-base text-charcoal/90 leading-relaxed">
+                            Avoir le ventre qui gonfle spectaculairemment <strong>ne signifie pas</strong> que l'endométriose envahit les intestins (seules <strong>~10 %</strong> des patientes ont des lésions digestives profondes). Dans 90 % des cas, il s'agit d'une réaction inflammatoire et musculaire temporaire à distance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Illustration SVG chaleureuse (Bouillotte & sérénité) -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-sm bg-sand/75 rounded-3xl p-6 sm:p-8 border border-sand flex flex-col items-center text-center">
+                    <svg viewBox="0 0 260 220" class="w-56 h-48 pulse-gentle" aria-label="Illustration apaisante d'une bouillotte chaude">
+                        <circle cx="130" cy="115" r="88" fill="#F9EAE8" />
+                        <circle cx="130" cy="115" r="68" fill="#EFEBF7" opacity="0.75" />
+                        <path d="M90 48 Q95 38 90 28" stroke="#D9776C" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+                        <path d="M130 40 Q135 30 130 20" stroke="#D9776C" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/>
+                        <path d="M170 48 Q175 38 170 28" stroke="#D9776C" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.65"/>
+                        <path d="M112 58 H148 L143 72 H117 Z" fill="#D9776C" rx="4"/>
+                        <rect x="122" y="50" width="16" height="9" rx="3" fill="#A6463C"/>
+                        <rect x="82" y="70" width="96" height="112" rx="36" fill="#D9776C"/>
+                        <rect x="92" y="80" width="76" height="92" rx="28" fill="none" stroke="#FDFBF7" stroke-width="2" stroke-dasharray="4 4" opacity="0.75"/>
+                        <path d="M130 142 C130 142 108 128 108 114 C108 106 115 101 122 101 C126 101 129 104 130 106 C131 104 134 101 138 101 C145 101 152 106 152 114 C152 128 130 142 130 142 Z" fill="#FDFBF7"/>
+                        <path d="M62 165 C45 155 48 135 65 142 C72 145 70 158 62 165 Z" fill="#6B8E78"/>
+                        <path d="M198 165 C215 155 212 135 195 142 C188 145 190 158 198 165 Z" fill="#6B8E78"/>
+                    </svg>
+                    <p class="font-serif italic text-sm text-charcoal/85 mt-2">
+                        « Un phénomène physique réel, documenté, et surtout réversible après les règles. »
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. SECTION INTERACTIVE : LE MÉCANISME BIOLOGIQUE EN 3 ÉTAPES + SCHÉMAS COMPARATIFS -->
+    <section id="mecanisme" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-sand scroll-mt-16">
+        <div class="max-w-3xl mb-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta-dark">Anatomie & Physiologie</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal mt-1">
+                Le mécanisme biologique en 3 étapes
+            </h2>
+            <p class="text-charcoal/80 text-sm sm:text-base mt-2 leading-relaxed">
+                Explore chaque étape ci-dessous pour comprendre précisément ce qui se passe au niveau chimique, digestif et musculaire dans le bassin.
+            </p>
+        </div>
+
+        <!-- Sélecteur interactif des 3 étapes -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8" role="tablist">
+            <button onclick="selectStep(1)" id="tab-step-1" class="step-btn active text-left p-4 rounded-2xl border-2 border-sand bg-white hover:border-terracotta/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-terracotta text-white font-bold text-sm flex items-center justify-center flex-shrink-0">1</span>
+                    <div>
+                        <div class="text-xs font-bold text-terracotta-dark uppercase">Déclencheur</div>
+                        <div class="font-semibold text-charcoal text-sm sm:text-base">La cause : l'orage inflammatoire</div>
+                    </div>
+                </div>
+            </button>
+
+            <button onclick="selectStep(2)" id="tab-step-2" class="step-btn text-left p-4 rounded-2xl border-2 border-sand bg-white hover:border-lavender/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-lavender text-white font-bold text-sm flex items-center justify-center flex-shrink-0">2</span>
+                    <div>
+                        <div class="text-xs font-bold text-lavender-dark uppercase">Réaction en chaîne</div>
+                        <div class="font-semibold text-charcoal text-sm sm:text-base">L'effet domino sur l'intestin</div>
+                    </div>
+                </div>
+            </button>
+
+            <button onclick="selectStep(3)" id="tab-step-3" class="step-btn text-left p-4 rounded-2xl border-2 border-sand bg-white hover:border-sage/50 transition cursor-pointer">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-sage text-white font-bold text-sm flex items-center justify-center flex-shrink-0">3</span>
+                    <div>
+                        <div class="text-xs font-bold text-sage-dark uppercase">Manifestation</div>
+                        <div class="font-semibold text-charcoal text-sm sm:text-base">Le résultat visible et réversible</div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- Zone d'affichage interactive : Schéma SVG + Légende explicite + Détails biologiques -->
+        <div class="bg-white rounded-3xl border border-sand p-5 sm:p-8 shadow-xs mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Colonne Schéma SVG + LÉGENDE EXPLICITE -->
+                <div class="lg:col-span-5 flex flex-col bg-cream rounded-2xl p-4 sm:p-5 border border-sand">
+                    <div class="text-xs font-semibold text-charcoal/70 uppercase tracking-wide text-center mb-2">
+                        Vue en coupe simplifiée du bassin
+                    </div>
+                    <svg id="pelvic-svg" viewBox="0 0 300 260" class="w-full max-w-[290px] mx-auto h-auto" aria-label="Schéma simplifié de la cavité pelvienne">
+                        <!-- Contour doux de la cavité pelvienne -->
+                        <rect x="20" y="15" width="260" height="230" rx="50" fill="#F5EFE6" stroke="#E5DDD3" stroke-width="2"/>
+                        
+                        <!-- Paroi abdominale (devient tendue à l'étape 3) -->
+                        <path id="svg-abdomen" d="M 45 45 Q 150 25 255 45" fill="none" stroke="#6B8E78" stroke-width="5" stroke-linecap="round" class="transition-all duration-500"/>
+                        <text x="150" y="29" text-anchor="middle" font-size="10" fill="#23272A" opacity="0.75" font-weight="600">Paroi abdominale & muscles</text>
+
+                        <!-- Intestin (arrière-plan proche) -->
+                        <g id="svg-intestine" onclick="selectStep(2)" class="cursor-pointer transition-all duration-500">
+                            <path d="M 75 95 C 75 72, 225 72, 225 95 C 225 112, 85 108, 85 125 C 85 142, 215 138, 215 155" 
+                                  fill="none" stroke="#8E7DBE" stroke-width="24" stroke-linecap="round" opacity="0.35"/>
+                            <path d="M 75 95 C 75 72, 225 72, 225 95 C 225 112, 85 108, 85 125 C 85 142, 215 138, 215 155" 
+                                  fill="none" stroke="#8E7DBE" stroke-width="16" stroke-linecap="round" opacity="0.65"/>
+                            <text x="150" y="88" text-anchor="middle" font-size="11" fill="#23272A" font-weight="700">Intestins (voisins directs)</text>
+                        </g>
+
+                        <!-- Halo inflammatoire (prostaglandines / cytokines) -->
+                        <g id="svg-inflammation" onclick="selectStep(1)" class="cursor-pointer transition-opacity duration-500">
+                            <circle cx="150" cy="175" r="52" fill="#D9776C" opacity="0.18" class="pulse-gentle"/>
+                            <circle cx="150" cy="175" r="38" fill="#D9776C" opacity="0.25"/>
+                            <!-- Petits points rouges : molécules inflammatoires (prostaglandines & cytokines) -->
+                            <circle cx="115" cy="145" r="4.5" fill="#D9776C"/>
+                            <circle cx="150" cy="138" r="5.5" fill="#D9776C"/>
+                            <circle cx="185" cy="145" r="4.5" fill="#D9776C"/>
+                            <circle cx="132" cy="128" r="4" fill="#A6463C"/>
+                            <circle cx="168" cy="128" r="4" fill="#A6463C"/>
+                        </g>
+
+                        <!-- Utérus stylisé doux -->
+                        <g id="svg-uterus" onclick="selectStep(1)" class="cursor-pointer">
+                            <path d="M 122 155 C 122 145, 178 145, 178 155 L 166 198 C 163 206, 137 206, 134 198 Z" fill="#D9776C"/>
+                            <path d="M 122 155 Q 100 148 92 160" fill="none" stroke="#D9776C" stroke-width="6" stroke-linecap="round"/>
+                            <path d="M 178 155 Q 200 148 208 160" fill="none" stroke="#D9776C" stroke-width="6" stroke-linecap="round"/>
+                            <text x="150" y="182" text-anchor="middle" font-size="11" fill="#FDFBF7" font-weight="600">Utérus</text>
+                        </g>
+
+                        <!-- Petits points blancs : poches de gaz piégés dans l'intestin -->
+                        <g id="svg-gas" opacity="0.65" class="transition-opacity duration-500">
+                            <circle cx="105" cy="96" r="6" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.8"/>
+                            <circle cx="195" cy="96" r="7" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.8"/>
+                            <circle cx="145" cy="123" r="6" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.8"/>
+                            <circle cx="122" cy="123" r="4.5" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.5"/>
+                        </g>
+                    </svg>
+
+                    <!-- LÉGENDE EXPLICITE DES SYMBOLES DU SCHÉMA -->
+                    <div class="mt-4 pt-3.5 border-t border-sand space-y-2.5 text-xs">
+                        <div class="font-bold text-charcoal uppercase tracking-wider text-[11px]">Légende du schéma :</div>
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-3.5 h-3.5 rounded-full bg-terracotta flex-shrink-0 mt-0.5 shadow-2xs"></span>
+                            <span class="text-charcoal/85 leading-snug">
+                                <strong class="text-terracotta-dark">Petits points rouges :</strong> Molécules inflammatoires (<strong>prostaglandines PGE2/PGF2α</strong> et <strong>cytokines</strong>) libérées par les lésions et l'utérus qui diffusent vers les tissus voisins.
+                            </span>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-3.5 h-3.5 rounded-full bg-cream border-2 border-lavender-dark flex-shrink-0 mt-0.5"></span>
+                            <span class="text-charcoal/85 leading-snug">
+                                <strong class="text-lavender-dark">Petits points blancs :</strong> Poches de <strong>gaz intestinaux piégés</strong> (issus de la digestion normale) qui s'accumulent car le transit ralentit sous l'effet de l'inflammation.
+                            </span>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <span class="w-3.5 h-1.5 rounded-full bg-sage flex-shrink-0 mt-1.5"></span>
+                            <span class="text-charcoal/85 leading-snug">
+                                <strong class="text-sage-dark">Arc supérieur :</strong> Paroi et muscles abdominaux qui se tendent par réflexe de protection.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenu textuel détaillé selon l'étape choisie -->
+                <div class="lg:col-span-7">
+                    <!-- ÉTAPE 1 -->
+                    <div id="content-step-1" class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta-light text-terracotta-dark text-xs font-bold">
+                            Étape 1 sur 3 • Le déclencheur hormonal & chimique
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal">
+                            La cause : l'orage inflammatoire et hormonal
+                        </h3>
+                        <p class="text-charcoal/85 text-sm sm:text-base leading-relaxed">
+                            En fin de cycle, la chute brutale des taux d'<strong>œstrogènes</strong> et de <strong>progestérone</strong> déclenche les règles. Chez une personne atteinte d'endométriose, les lésions situées dans le bas-ventre (péritoine, ligaments utéro-sacrés, ovaires) réagissent à cette chute hormonale exactement comme l'endomètre : elles subissent des micro-saignements locaux.
+                        </p>
+                        <p class="text-charcoal/85 text-sm sm:text-base leading-relaxed">
+                            Pour nettoyer ces micro-saignements, le système immunitaire recrute massivement des globules blancs (macrophages) et libère un cocktail de médiateurs chimiques :
+                        </p>
+                        <ul class="space-y-2 text-sm text-charcoal/85 bg-cream p-4 rounded-2xl border border-sand">
+                            <li class="flex items-start gap-2">
+                                <span class="text-terracotta font-bold">•</span>
+                                <span><strong>Les prostaglandines (PGE2 et PGF2α) :</strong> Ce sont des messagers lipidiques qui provoquent des contractions de l'utérus, mais qui agissent aussi directement sur les muscles lisses des organes voisins.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-terracotta font-bold">•</span>
+                                <span><strong>Les cytokines pro-inflammatoires (IL-1β, IL-6, TNF-α) :</strong> Elles entretiennent une inflammation locale dans le liquide péritonéal qui baigne tout le bas-ventre.</span>
+                            </li>
+                        </ul>
+                        <div class="p-4 rounded-xl bg-terracotta-light/65 border border-terracotta/25 text-sm text-charcoal/90">
+                            <strong>💡 L'analogie de la coupure :</strong> Ton intuition était juste sur le point de départ ! C'est le même processus chimique qu'une plaie qui rougit et chauffe, mais comme il se produit à l'intérieur d'une cavité fermée (le pelvis), il irrite les voisins immédiats.
+                        </div>
+                    </div>
+
+                    <!-- ÉTAPE 2 -->
+                    <div id="content-step-2" class="hidden space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lavender-light text-lavender-dark text-xs font-bold">
+                            Étape 2 sur 3 • La réaction physique en chaîne
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal">
+                            L'effet domino sur l'intestin et la paroi abdominale
+                        </h3>
+                        <div class="grid grid-cols-1 gap-3.5">
+                            <!-- Carte A -->
+                            <div class="p-4 rounded-2xl bg-lavender-light/55 border border-lavender/30">
+                                <h4 class="font-semibold text-lavender-dark text-sm sm:text-base flex items-center gap-2">
+                                    <span>🌀</span> 1. Ralentissement du péristaltisme et fermentation
+                                </h4>
+                                <p class="text-xs sm:text-sm text-charcoal/85 mt-1.5 leading-relaxed">
+                                    Les anses de l'intestin grêle et le côlon sigmoïde reposent directement contre l'utérus dans le liquide péritonéal. Irritées par les prostaglandines et la chute de progestérone, les contractions naturelles de l'intestin (<strong>péristaltisme</strong>) se désorganisent et ralentissent. Les résidus alimentaires stagnent plus longtemps, ce qui augmente la fermentation par le microbiote et la production de gaz (hydrogène, méthane).
+                                </p>
+                            </div>
+                            <!-- Carte B -->
+                            <div class="p-4 rounded-2xl bg-lavender-light/55 border border-lavender/30">
+                                <h4 class="font-semibold text-lavender-dark text-sm sm:text-base flex items-center gap-2">
+                                    <span>⚡</span> 2. Hypersensibilité viscérale des nocicepteurs
+                                </h4>
+                                <p class="text-xs sm:text-sm text-charcoal/85 mt-1.5 leading-relaxed">
+                                    L'inflammation abaisse le seuil d'activation des récepteurs nerveux de la paroi intestinale (nocicepteurs). L'étude britannique d'<strong>Issa et al.</strong> a démontré que les patientes ressentent une douleur dès <strong>28 mmHg</strong> de pression interne (contre <strong>39,5 mmHg</strong> chez les femmes sans endométriose). Le cerveau perçoit donc un volume normal de gaz comme une distension intense.
+                                </p>
+                            </div>
+                            <!-- Carte C -->
+                            <div class="p-4 rounded-2xl bg-lavender-light/55 border border-lavender/30">
+                                <h4 class="font-semibold text-lavender-dark text-sm sm:text-base flex items-center gap-2">
+                                    <span>💧</span> 3. Œdème local et réflexe de défense (« muscle guarding »)
+                                </h4>
+                                <p class="text-xs sm:text-sm text-charcoal/85 mt-1.5 leading-relaxed">
+                                    L'inflammation augmente la perméabilité des petits vaisseaux sanguins, attirant de l'eau dans les tissus pelviens (<strong>œdème inflammatoire</strong>). Simultanément, par réflexe neurologique inconscient face à la douleur viscérale, le diaphragme s'abaisse et les muscles de la sangle abdominale se contractent (<em>muscle guarding</em>) tout en relâchant la paroi antérieure, poussant le volume vers l'avant.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ÉTAPE 3 -->
+                    <div id="content-step-3" class="hidden space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-light text-sage-dark text-xs font-bold">
+                            Étape 3 sur 3 • Le résultat visible & sa résorption
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-semibold text-charcoal">
+                            Un ventre gonflé, tendu, mais totalement réversible
+                        </h3>
+                        <p class="text-charcoal/85 text-sm sm:text-base leading-relaxed">
+                            L'addition de ces trois facteurs (<strong>gaz retenus + œdème hydrique local + poussée musculaire réflexe</strong>) explique pourquoi le bas-ventre peut gonfler en quelques heures, devenir dur, sensible au toucher et donner l'impression d'un ventre de grossesse de plusieurs mois.
+                        </p>
+                        <div class="p-4 rounded-2xl bg-cream border border-sand space-y-2 text-sm text-charcoal/85">
+                            <div class="font-semibold text-charcoal">Pourquoi ça dégonfle ensuite ?</div>
+                            <p class="leading-relaxed">
+                                Dès que les règles s'achèvent et que la phase folliculaire redémarre, la sécrétion de prostaglandines chute brutalement. L'œdème est drainé par le système lymphatique, le transit retrouve sa motricité normale et les muscles abdominaux relâchent leur garde.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-sage-light/75 border border-sage/35 text-sm text-charcoal/90">
+                            <strong>🌱 À retenir pour se rassurer :</strong> Ce volume n'est ni une prise de poids, ni une aggravation brutale de la maladie. C'est une réponse mécanique et chimique passagère.
+                        </div>
+                    </div>
+
+                    <!-- Boutons Suivant / Précédent -->
+                    <div class="flex items-center justify-between pt-5 mt-6 border-t border-sand">
+                        <button onclick="prevStep()" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-sand hover:bg-sand/80 text-charcoal transition cursor-pointer">
+                            ← Étape précédente
+                        </button>
+                        <button onclick="nextStep()" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-charcoal hover:bg-charcoal/90 text-white transition cursor-pointer">
+                            Étape suivante →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOUVEAUX SCHÉMAS ILLUSTRATIFS STATIQUES (Comparaison visuelle claire) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Schéma 2 : Comparatif Intestin au repos vs Phase inflammatoire -->
+            <div class="bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between">
+                <div>
+                    <span class="px-2.5 py-1 rounded-full bg-lavender-light text-lavender-dark text-xs font-bold">Schéma comparatif 1</span>
+                    <h3 class="font-serif text-lg sm:text-xl font-semibold text-charcoal mt-2">
+                        Ce qui change dans l'intestin pendant les règles
+                    </h3>
+                    <p class="text-xs sm:text-sm text-charcoal/75 mt-1 mb-4">
+                        Comparaison entre un transit habituel (hors règles) et la réaction de proximité pendant les règles.
+                    </p>
+                </div>
+
+                <div class="bg-cream rounded-2xl p-4 border border-sand">
+                    <svg viewBox="0 0 360 190" class="w-full h-auto" aria-label="Comparaison intestin hors règles versus pendant les règles">
+                        <!-- Séparateur central -->
+                        <line x1="180" y1="15" x2="180" y2="175" stroke="#E5DDD3" stroke-width="2" stroke-dasharray="4 4"/>
+
+                        <!-- COLONNE GAUCHE : HORS RÈGLES -->
+                        <text x="90" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#415D4B">Hors règles (Calme)</text>
+                        <!-- Tube intestinal régulier -->
+                        <rect x="42" y="42" width="96" height="44" rx="22" fill="#EBF1ED" stroke="#6B8E78" stroke-width="2.5"/>
+                        <!-- Flèches de transit fluide -->
+                        <path d="M 60 64 H 116 M 110 58 L 118 64 L 110 70" fill="none" stroke="#415D4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Petits gaz dispersés normaux -->
+                        <circle cx="72" cy="54" r="3" fill="#FDFBF7" stroke="#6B8E78" stroke-width="1.2"/>
+                        <circle cx="102" cy="73" r="3" fill="#FDFBF7" stroke="#6B8E78" stroke-width="1.2"/>
+                        <text x="90" y="106" text-anchor="middle" font-size="9.5" fill="#23272A" font-weight="600">• Transit fluide</text>
+                        <text x="90" y="121" text-anchor="middle" font-size="9.5" fill="#23272A">• Gaz évacués facilement</text>
+                        <text x="90" y="136" text-anchor="middle" font-size="9.5" fill="#23272A">• Seuil de douleur normal</text>
+                        <text x="90" y="151" text-anchor="middle" font-size="9.5" fill="#415D4B" font-weight="600">(39,5 mmHg)</text>
+
+                        <!-- COLONNE DROITE : PENDANT LES RÈGLES -->
+                        <text x="270" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#A6463C">Pendant les règles</text>
+                        <!-- Tube intestinal dilaté et irrité -->
+                        <rect x="214" y="36" width="112" height="56" rx="28" fill="#F9EAE8" stroke="#D9776C" stroke-width="3"/>
+                        <!-- Bulles de gaz accumulées -->
+                        <circle cx="242" cy="56" r="7" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.5"/>
+                        <circle cx="265" cy="68" r="8.5" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.5"/>
+                        <circle cx="292" cy="54" r="7.5" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.5"/>
+                        <circle cx="305" cy="72" r="5.5" fill="#FDFBF7" stroke="#5B4B8A" stroke-width="1.5"/>
+                        <!-- Petits points rouges inflammatoires sur la paroi -->
+                        <circle cx="230" cy="36" r="3.5" fill="#D9776C"/>
+                        <circle cx="270" cy="35" r="4" fill="#A6463C"/>
+                        <circle cx="308" cy="36" r="3.5" fill="#D9776C"/>
+                        <text x="270" y="110" text-anchor="middle" font-size="9.5" fill="#23272A" font-weight="600">• Transit ralenti (spasmes)</text>
+                        <text x="270" y="125" text-anchor="middle" font-size="9.5" fill="#23272A">• Gaz piégés + fermentation</text>
+                        <text x="270" y="140" text-anchor="middle" font-size="9.5" fill="#23272A">• Paroi hypersensible</text>
+                        <text x="270" y="155" text-anchor="middle" font-size="9.5" fill="#A6463C" font-weight="700">(alerte dès 28 mmHg)</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Schéma 3 : Mécanisme musculaire (Muscle Guarding & Œdème) -->
+            <div class="bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between">
+                <div>
+                    <span class="px-2.5 py-1 rounded-full bg-terracotta-light text-terracotta-dark text-xs font-bold">Schéma comparatif 2</span>
+                    <h3 class="font-serif text-lg sm:text-xl font-semibold text-charcoal mt-2">
+                        Le réflexe de défense musculaire (« Muscle Guarding »)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-charcoal/75 mt-1 mb-4">
+                        Comment la posture et les muscles du tronc réagissent automatiquement à la douleur pelvienne.
+                    </p>
+                </div>
+
+                <div class="bg-cream rounded-2xl p-4 border border-sand">
+                    <svg viewBox="0 0 360 190" class="w-full h-auto" aria-label="Schéma du réflexe musculaire abdominal">
+                        <!-- Profil stylisé du buste / abdomen -->
+                        <!-- Dos / Colonne -->
+                        <path d="M 85 30 L 85 160" stroke="#8E7DBE" stroke-width="6" stroke-linecap="round" opacity="0.45"/>
+                        <text x="68" y="95" text-anchor="end" font-size="9.5" fill="#5B4B8A" font-weight="600">Dos</text>
+
+                        <!-- Diaphragme qui descend -->
+                        <path d="M 88 52 Q 130 42 165 55" fill="none" stroke="#6B8E78" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M 130 50 L 130 68 M 125 63 L 130 69 L 135 63" fill="none" stroke="#415D4B" stroke-width="2" stroke-linecap="round"/>
+                        <text x="142" y="42" font-size="9" fill="#415D4B" font-weight="600">Diaphragme abaissé</text>
+
+                        <!-- Paroi abdominale normale en pointillés -->
+                        <path d="M 165 55 Q 172 105 160 155" fill="none" stroke="#6B8E78" stroke-width="2" stroke-dasharray="4 4"/>
+                        
+                        <!-- Paroi abdominale projetée vers l'avant -->
+                        <path d="M 165 55 Q 218 108 160 155" fill="rgba(217, 119, 108, 0.18)" stroke="#D9776C" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M 172 108 L 196 108 M 190 103 L 197 108 L 190 113" fill="none" stroke="#A6463C" stroke-width="2" stroke-linecap="round"/>
+
+                        <!-- Zone œdème bas-ventre -->
+                        <ellipse cx="145" cy="132" rx="26" ry="16" fill="#8E7DBE" opacity="0.25"/>
+                        <text x="142" y="135" text-anchor="middle" font-size="8.5" fill="#5B4B8A" font-weight="700">Œdème + Gaz</text>
+
+                        <!-- Légende explicative intégrée à droite -->
+                        <g transform="translate(215, 42)">
+                            <text x="0" y="0" font-size="10" font-weight="700" fill="#23272A">Pourquoi le ventre est dur ?</text>
+                            <text x="0" y="20" font-size="9" fill="#23272A">1. Le diaphragme pousse vers</text>
+                            <text x="0" y="32" font-size="9" fill="#23272A">   le bas par réflexe antalgique.</text>
+                            <text x="0" y="52" font-size="9" fill="#23272A">2. La paroi avant se relâche</text>
+                            <text x="0" y="64" font-size="9" fill="#23272A">   pour éviter d'écraser la zone</text>
+                            <text x="0" y="76" font-size="9" fill="#23272A">   enflammée (protection).</text>
+                            <text x="0" y="96" font-size="9" fill="#A6463C" font-weight="600">→ Le volume est projeté</text>
+                            <text x="0" y="108" font-size="9" fill="#A6463C" font-weight="600">   vers l'avant.</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. NOUVELLE RUBRIQUE : IDÉES REÇUES VS RÉALITÉ MÉDICALE -->
+    <section id="idees-recues" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-sand scroll-mt-16">
+        <div class="max-w-2xl mb-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-sage-dark">Démêler le vrai du faux</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal mt-1">
+                Idées reçues vs Réalité médicale
+            </h2>
+            <p class="text-charcoal/75 text-sm sm:text-base mt-2">
+                Lorsque le ventre gonfle soudainement, l'inquiétude fait souvent imaginer le pire. Voici ce que la médecine confirme pour lever les doutes.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Carte 1 -->
+            <div class="soft-card bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-terracotta-light text-terracotta-dark text-xs font-bold">
+                        <span>✕</span> Idée reçue n°1
+                    </div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-charcoal">
+                        « Si mon ventre gonfle autant, c'est que l'endométriose a envahi mes intestins. »
+                    </h3>
+                </div>
+                <div class="p-4 rounded-2xl bg-sage-light/70 border border-sage/30 space-y-1.5">
+                    <div class="text-xs font-bold text-sage-dark uppercase">✓ Réalité médicale</div>
+                    <p class="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                        <strong>Faux dans 90 % des cas.</strong> Les études montrent que 83 % des patientes ont des ballonnements sévères alors que seules ~10 % présentent des lésions digestives profondes. C'est une irritation chimique à distance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="soft-card bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-terracotta-light text-terracotta-dark text-xs font-bold">
+                        <span>✕</span> Idée reçue n°2
+                    </div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-charcoal">
+                        « J'ai dû manger quelque chose qui ne passe pas ou prendre du poids d'un coup. »
+                    </h3>
+                </div>
+                <div class="p-4 rounded-2xl bg-sage-light/70 border border-sage/30 space-y-1.5">
+                    <div class="text-xs font-bold text-sage-dark uppercase">✓ Réalité médicale</div>
+                    <p class="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                        <strong>Faux.</strong> Un repas habituel, parfaitement toléré le reste du mois, provoque des ballonnements pendant les règles parce que le transit est ralenti par les prostaglandines et que l'intestin est hypersensible.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="soft-card bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between space-y-4">
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-terracotta-light text-terracotta-dark text-xs font-bold">
+                        <span>✕</span> Idée reçue n°3
+                    </div>
+                    <h3 class="font-serif text-base sm:text-lg font-semibold text-charcoal">
+                        « Ce gonflement va finir par rester permanent. »
+                    </h3>
+                </div>
+                <div class="p-4 rounded-2xl bg-sage-light/70 border border-sage/30 space-y-1.5">
+                    <div class="text-xs font-bold text-sage-dark uppercase">✓ Réalité médicale</div>
+                    <p class="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                        <strong>Faux.</strong> L'« endo belly » est par définition <strong>cyclique</strong> : il suit le pic inflammatoire des règles et se résorbe naturellement dès que la chute hormonale s'arrête.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION : CE QUE DISENT LES ÉTUDES (GRAPHIQUES + LIENS SIMPLIFIÉS VERS LES ÉTUDES) -->
+    <section id="etudes" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-sand scroll-mt-16">
+        <div class="max-w-2xl mb-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-lavender-dark">Preuves & Données cliniques</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal mt-1">
+                Ce que disent les études scientifiques
+            </h2>
+            <p class="text-charcoal/75 text-sm sm:text-base mt-2">
+                Les chiffres clés issus de publications médicales internationales, avec un accès direct à chaque étude complète.
+            </p>
+        </div>
+
+        <!-- 3 Anneaux / Jauges statistiques avec liens directs vers les études -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+            <!-- Jauge 1 : 83 % -->
+            <div class="soft-card bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between items-center text-center">
+                <div class="flex flex-col items-center">
+                    <div class="relative w-28 h-28 flex items-center justify-center mb-4">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#F5EFE6" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#D9776C" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="42.7" stroke-linecap="round"/>
+                        </svg>
+                        <span class="absolute font-serif text-2xl font-bold text-charcoal">83 %</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal text-base">Une fréquence très élevée</h3>
+                    <p class="text-xs sm:text-sm text-charcoal/80 mt-2 leading-relaxed">
+                        des femmes atteintes d'endométriose souffrent de ballonnements importants (et 90 % de troubles digestifs).
+                    </p>
+                </div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/19403641/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-dark hover:underline bg-terracotta-light/60 px-3 py-1.5 rounded-full">
+                    <span>📄 Maroun et al. (PubMed)</span>
+                    <span>↗</span>
+                </a>
+            </div>
+
+            <!-- Jauge 2 : 90 % sans atteinte directe -->
+            <div class="soft-card bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between items-center text-center">
+                <div class="flex flex-col items-center">
+                    <div class="relative w-28 h-28 flex items-center justify-center mb-4">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#F5EFE6" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#6B8E78" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="25.1" stroke-linecap="round"/>
+                        </svg>
+                        <span class="absolute font-serif text-2xl font-bold text-charcoal">90 %</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal text-base">Sans lésion sur l'intestin</h3>
+                    <p class="text-xs sm:text-sm text-charcoal/80 mt-2 leading-relaxed">
+                        des cas sont une réaction inflammatoire à distance : seulement <strong>~10 %</strong> ont des lésions digestives directes.
+                    </p>
+                </div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/33562131/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-sage-dark hover:underline bg-sage-light/70 px-3 py-1.5 rounded-full">
+                    <span>📄 Méta-analyse Chiaffarino et al.</span>
+                    <span>↗</span>
+                </a>
+            </div>
+
+            <!-- Jauge 3 : 60 % amélioration FODMAP -->
+            <div class="soft-card bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between items-center text-center">
+                <div class="flex flex-col items-center">
+                    <div class="relative w-28 h-28 flex items-center justify-center mb-4">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#F5EFE6" stroke-width="10"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#8E7DBE" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="100.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="absolute font-serif text-2xl font-bold text-charcoal">60 %</span>
+                    </div>
+                    <h3 class="font-semibold text-charcoal text-base">Amélioration par l'alimentation</h3>
+                    <p class="text-xs sm:text-sm text-charcoal/80 mt-2 leading-relaxed">
+                        de réduction nette des ballonnements grâce à une approche pauvre en FODMAP (Université Monash).
+                    </p>
+                </div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/28303579/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-lavender-dark hover:underline bg-lavender-light/70 px-3 py-1.5 rounded-full">
+                    <span>📄 Essai Moore et al. (Monash)</span>
+                    <span>↗</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Grille des 2 Graphiques interactifs avec liens simplifiés vers les études -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Graphique 1 : Seuil de sensibilité (Issa et al.) -->
+            <div class="bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/21782231/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-lavender-light text-lavender-dark hover:bg-lavender hover:text-white text-xs font-bold transition">
+                            <span>Étude Issa et al. — Lire sur PubMed</span>
+                            <span>↗</span>
+                        </a>
+                        <span class="text-xs text-charcoal/60 font-medium">Pression en mmHg</span>
+                    </div>
+                    <h3 class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                        Seuil de sensibilité à la pression intestinale
+                    </h3>
+                    <p class="text-xs sm:text-sm text-charcoal/80 mt-1 mb-4">
+                        À pression égale dans l'intestin, le signal d'alerte se déclenche beaucoup plus tôt en cas d'endométriose : c'est l'<strong>hypersensibilité viscérale</strong>.
+                    </p>
+                </div>
+                <div class="relative h-56 w-full">
+                    <canvas id="sensitivityChart"></canvas>
+                </div>
+                <div class="flex items-center justify-between gap-2 text-xs text-charcoal/75 bg-cream p-3 rounded-xl mt-4 border border-sand">
+                    <span><strong>En clair :</strong> Un volume de gaz banal suffit à déclencher une sensation de tension extrême.</span>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21782231/" target="_blank" rel="noopener noreferrer" class="text-lavender-dark font-semibold underline flex-shrink-0">Source ↗</a>
+                </div>
+            </div>
+
+            <!-- Graphique 2 : Simulateur interactif sur le cycle -->
+            <div class="bg-white p-6 rounded-3xl border border-sand flex flex-col justify-between">
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/34442573/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-terracotta-light text-terracotta-dark hover:bg-terracotta hover:text-white text-xs font-bold transition">
+                            <span>Mécanismes cycliques (JCM)</span>
+                            <span>↗</span>
+                        </a>
+                        <span id="cycle-day-badge" class="text-xs font-bold text-terracotta-dark">Règles J2</span>
+                    </div>
+                    <h3 class="font-serif text-lg sm:text-xl font-semibold text-charcoal">
+                        Simulateur : évolution du gonflement sur le cycle
+                    </h3>
+                    <p class="text-xs sm:text-sm text-charcoal/80 mt-1 mb-3">
+                        Déplace le curseur pour visualiser le pic inflammatoire autour des règles et le retour progressif à la normale.
+                    </p>
+                </div>
+
+                <div class="relative h-48 w-full">
+                    <canvas id="cycleChart"></canvas>
+                </div>
+
+                <!-- Contrôle interactif du jour du cycle -->
+                <div class="mt-4 bg-cream p-4 rounded-2xl border border-sand">
+                    <div class="flex justify-between text-xs font-medium text-charcoal/70 mb-1">
+                        <span>Phase folliculaire</span>
+                        <span>Ovulation</span>
+                        <span class="text-terracotta-dark font-bold">Règles (Pic)</span>
+                        <span>Après règles</span>
+                    </div>
+                    <input type="range" id="cycleSlider" min="1" max="28" value="19" class="w-full" aria-label="Jour du cycle menstruel">
+                    <p id="cycle-explanation" class="text-xs sm:text-sm text-charcoal/90 mt-2 font-medium">
+                        📍 <strong>Pendant les règles :</strong> Pic de prostaglandines et d'inflammation. Le gonflement est maximal, mais il est temporaire.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION : QUE FAIRE POUR LA SOULAGER ? (Sans liste rituel, enrichie de postures SVG & tableau FODMAP) -->
+    <section id="soulager" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-sand scroll-mt-16">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div class="max-w-2xl">
+                <span class="text-xs font-bold uppercase tracking-wider text-sage-dark">Actions concrètes & validées</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal mt-1">
+                    Que faire pour la soulager ?
+                </h2>
+                <p class="text-charcoal/80 text-sm sm:text-base mt-2">
+                    Bien qu'il n'existe pas de remède miracle instantané, plusieurs leviers mécaniques et nutritionnels validés permettent de réduire l'ampleur du gonflement et la tension.
+                </p>
+            </div>
+
+            <!-- Filtres / Onglets pratiques -->
+            <div class="inline-flex p-1.5 rounded-full bg-sand self-start sm:self-auto" role="tablist">
+                <button onclick="filterTips('all')" id="btn-tip-all" class="tip-filter px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white text-charcoal shadow-2xs transition cursor-pointer">
+                    Tout voir
+                </button>
+                <button onclick="filterTips('crise')" id="btn-tip-crise" class="tip-filter px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-charcoal/80 hover:text-charcoal transition cursor-pointer">
+                    Pendant la crise
+                </button>
+                <button onclick="filterTips('prevention')" id="btn-tip-prevention" class="tip-filter px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-charcoal/80 hover:text-charcoal transition cursor-pointer">
+                    Alimentation
+                </button>
+            </div>
+        </div>
+
+        <!-- Cartes de solutions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Colonne / Groupe 1 : Pendant la crise -->
+            <div id="group-crise" class="space-y-4">
+                <div class="flex items-center gap-2.5 mb-2">
+                    <span class="w-8 h-8 rounded-full bg-terracotta-light text-terracotta-dark flex items-center justify-center font-bold">1</span>
+                    <h3 class="font-serif text-xl font-semibold text-charcoal">Pendant la crise (soulagement mécanique)</h3>
+                </div>
+
+                <!-- Carte Chaleur -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand flex items-start gap-4">
+                    <div class="w-11 h-11 rounded-2xl bg-terracotta-light text-terracotta flex items-center justify-center flex-shrink-0 text-xl">
+                        🔥
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-charcoal text-base">La chaleur (thermothérapie)</h4>
+                        <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                            Poser une bouillotte chaude sur le bas-ventre provoque une vasodilatation locale qui aide à détendre les spasmes des muscles lisses de l'intestin et relâche le réflexe de contraction de la paroi abdominale.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carte Mouvement doux + Postures SVG -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-2xl bg-terracotta-light text-terracotta flex items-center justify-center flex-shrink-0 text-xl">
+                            🧘‍♀️
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-charcoal text-base">Le mouvement doux & postures de libération</h4>
+                            <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                                Une marche tranquille ou des postures d'étirement doux aident à mobiliser le côlon pour évacuer les gaz bloqués par le ralentissement du transit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mini illustrations SVG des 2 postures douces -->
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <div class="bg-cream p-3 rounded-xl border border-sand text-center">
+                            <svg viewBox="0 0 140 70" class="w-28 h-14 mx-auto" aria-label="Posture de l'enfant">
+                                <line x1="15" y1="60" x2="125" y2="60" stroke="#E5DDD3" stroke-width="2"/>
+                                <!-- Silhouette posture de l'enfant -->
+                                <path d="M 35 58 Q 48 35 78 42 Q 95 46 105 58" fill="none" stroke="#D9776C" stroke-width="5" stroke-linecap="round"/>
+                                <circle cx="110" cy="54" r="6" fill="#D9776C"/>
+                                <path d="M 95 52 L 122 58" stroke="#D9776C" stroke-width="3.5" stroke-linecap="round"/>
+                            </svg>
+                            <div class="text-xs font-semibold text-charcoal mt-1">Posture de l'enfant</div>
+                            <div class="text-[11px] text-charcoal/70">Détend le bas du dos et le bassin</div>
+                        </div>
+                        <div class="bg-cream p-3 rounded-xl border border-sand text-center">
+                            <svg viewBox="0 0 140 70" class="w-28 h-14 mx-auto" aria-label="Posture genoux-poitrine">
+                                <line x1="15" y1="60" x2="125" y2="60" stroke="#E5DDD3" stroke-width="2"/>
+                                <!-- Silhouette allongée genoux repliés -->
+                                <circle cx="32" cy="52" r="6" fill="#6B8E78"/>
+                                <path d="M 38 56 L 85 56 Q 95 36 72 34 Q 58 34 65 50" fill="none" stroke="#6B8E78" stroke-width="5" stroke-linecap="round"/>
+                            </svg>
+                            <div class="text-xs font-semibold text-charcoal mt-1">Genoux sur la poitrine</div>
+                            <div class="text-[11px] text-charcoal/70">Facilite l'évacuation des gaz</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Respiration diaphragmatique -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand flex items-start gap-4">
+                    <div class="w-11 h-11 rounded-2xl bg-terracotta-light text-terracotta flex items-center justify-center flex-shrink-0 text-xl">
+                        🌬️
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-charcoal text-base">Respiration abdominale lente</h4>
+                        <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                            Inspirer lentement par le nez en gonflant doucement le ventre puis expirer longuement active le nerf vague (système parasympathique), ce qui calme les spasmes intestinaux et relâche le <em>muscle guarding</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Carte Zéro compression -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand flex items-start gap-4">
+                    <div class="w-11 h-11 rounded-2xl bg-terracotta-light text-terracotta flex items-center justify-center flex-shrink-0 text-xl">
+                        👗
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-charcoal text-base">Zéro compression mécanique</h4>
+                        <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                            Porter des vêtements très amples (pantalons à taille souple, robes fluides) pour éviter toute pression externe sur une paroi intestinale hypersensible (seuil abaissé à 28 mmHg).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne / Groupe 2 : Sur le plan alimentaire -->
+            <div id="group-prevention" class="space-y-4">
+                <div class="flex items-center gap-2.5 mb-2">
+                    <span class="w-8 h-8 rounded-full bg-sage-light text-sage-dark flex items-center justify-center font-bold">2</span>
+                    <h3 class="font-serif text-xl font-semibold text-charcoal">Sur le plan alimentaire (autour des règles)</h3>
+                </div>
+
+                <!-- Carte FODMAP avec repères visuels concrets -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-2xl bg-sage-light text-sage-dark flex items-center justify-center flex-shrink-0 text-xl">
+                            🥗
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-charcoal text-base">Limiter temporairement les FODMAP</h4>
+                            <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                                L'essai clinique de l'université Monash a montré qu'une réduction temporaire des sucres fermentescibles (FODMAP) pendant la période sensible améliore nettement les ballonnements chez <strong>60 %</strong> des patientes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mini tableau pratique À privilégier vs À limiter pendant 4-5 jours -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="bg-sage-light/65 p-3.5 rounded-xl border border-sage/30">
+                            <div class="font-bold text-sage-dark mb-1.5">✓ Doux pour l'intestin</div>
+                            <ul class="space-y-1 text-charcoal/85">
+                                <li>• Riz, avoine, pommes de terre, quinoa</li>
+                                <li>• Courgettes, carottes, épinards cuits</li>
+                                <li>• Banane peu mûre, myrtilles, clémentines</li>
+                                <li>• Œufs, volaille, poisson, tofu ferme</li>
+                            </ul>
+                        </div>
+                        <div class="bg-terracotta-light/55 p-3.5 rounded-xl border border-terracotta/25">
+                            <div class="font-bold text-terracotta-dark mb-1.5">⏳ À limiter 4–5 jours</div>
+                            <ul class="space-y-1 text-charcoal/85">
+                                <li>• Ail, oignon, poireau (très fermentescibles)</li>
+                                <li>• Légumineuses (lentilles, pois chiches)</li>
+                                <li>• Chou, brocoli, pomme crue, poire</li>
+                                <li>• Blé en grande quantité & lactose</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Hydratation & Plantes -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand flex items-start gap-4">
+                    <div class="w-11 h-11 rounded-2xl bg-sage-light text-sage-dark flex items-center justify-center flex-shrink-0 text-xl">
+                        🍵
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-charcoal text-base">Hydratation et plantes carminatives</h4>
+                        <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                            Boire régulièrement de l'eau (plate, éviter les boissons gazeuses qui ajoutent du gaz directement) et privilégier les infusions de :
+                        </p>
+                        <ul class="text-xs sm:text-sm text-charcoal/85 mt-2 space-y-1">
+                            <li>• <strong>Menthe poivrée :</strong> antispasmodique naturel des muscles intestinaux.</li>
+                            <li>• <strong>Graines de fenouil :</strong> favorise l'expulsion des gaz et limite la fermentation.</li>
+                            <li>• <strong>Gingembre frais :</strong> stimule doucement la vidange gastrique et le transit.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Carte Fractionnement des repas -->
+                <div class="soft-card bg-white p-5 rounded-2xl border border-sand flex items-start gap-4">
+                    <div class="w-11 h-11 rounded-2xl bg-sage-light text-sage-dark flex items-center justify-center flex-shrink-0 text-xl">
+                        🍽️
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-charcoal text-base">Fractionner et privilégier le cuit</h4>
+                        <p class="text-sm text-charcoal/85 mt-1 leading-relaxed">
+                            Manger de plus petites portions bien mastiquées et préférer les légumes cuits aux crudités pendant les règles demande beaucoup moins d'effort mécanique à un intestin déjà ralenti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. NOUVELLE RUBRIQUE : TROUSSE DE SECOURS & PRÉPARATION AVANT LES RÈGLES -->
+    <section id="anticiper" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 border-t border-sand scroll-mt-16">
+        <div class="max-w-2xl mb-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta-dark">Organisation pratique</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-charcoal mt-1">
+                Anticiper 3 jours avant les règles
+            </h2>
+            <p class="text-charcoal/80 text-sm sm:text-base mt-2">
+                Comme le gonflement est prévisible sur le cycle, préparer le terrain 2 à 3 jours avant l'arrivée des règles permet de traverser le pic beaucoup plus confortablement.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-sand space-y-2">
+                <div class="w-9 h-9 rounded-xl bg-terracotta-light text-terracotta-dark font-bold flex items-center justify-center text-sm">J-3</div>
+                <h3 class="font-semibold text-charcoal text-base">Alléger l'assiette</h3>
+                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                    Réduire l'ail, l'oignon et les plats très riches juste avant le début des règles pour éviter d'avoir déjà des gaz accumulés quand l'inflammation démarre.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-sand space-y-2">
+                <div class="w-9 h-9 rounded-xl bg-lavender-light text-lavender-dark font-bold flex items-center justify-center text-sm">J-2</div>
+                <h3 class="font-semibold text-charcoal text-base">Préparer des repas simples</h3>
+                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                    Avoir sous la main des bases faciles à digérer (riz, bouillon doux, compotes sans sucre ajouté, bananes) pour ne pas avoir à cuisiner en cas de fatigue.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-sand space-y-2">
+                <div class="w-9 h-9 rounded-xl bg-sage-light text-sage-dark font-bold flex items-center justify-center text-sm">J-1</div>
+                <h3 class="font-semibold text-charcoal text-base">Tenues & bouillotte prêtes</h3>
+                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                    Sortir des vêtements amples sans élastique serré à la taille et garder la bouillotte et les infusions digestives à portée de main.
+                </p>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-sand space-y-2">
+                <div class="w-9 h-9 rounded-xl bg-sand text-charcoal font-bold flex items-center justify-center text-sm">J1–J3</div>
+                <h3 class="font-semibold text-charcoal text-base">Lâcher prise sur le miroir</h3>
+                <p class="text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                    Se rappeler que ce volume est lié à l'œdème et aux gaz piégés, et qu'il va redescendre tout seul dès la fin des règles.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PIED DE PAGE AVEC SOURCES SCIENTIFIQUES COMPLÈTES ET LIÉES DIRECTEMENT -->
+    <footer class="bg-sand/65 border-t border-sand mt-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-6">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-charcoal/65">Bibliographie médicale</span>
+                <h3 class="font-serif text-xl font-semibold text-charcoal mt-1">
+                    Sources scientifiques & études de référence
+                </h3>
+                <p class="text-xs sm:text-sm text-charcoal/75 mt-1">
+                    Clique sur chaque référence pour consulter directement la publication originale sur PubMed ou le site de la revue scientifique.
+                </p>
+            </div>
+
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <!-- Source 1 -->
+                <li class="bg-white p-4 rounded-2xl border border-sand flex flex-col justify-between gap-2">
+                    <div>
+                        <strong class="text-charcoal text-sm block mb-1">1. Maroun P. et al. (2009) — Prévalence des symptômes digestifs</strong>
+                        <p class="text-charcoal/80 leading-relaxed">
+                            <em>« Relevance of gastrointestinal symptoms in endometriosis »</em>, Australian and New Zealand Journal of Obstetrics and Gynaecology. Démontre que 90 % des patientes présentent des symptômes digestifs et 83 % des ballonnements importants, alors que ~10 % seulement ont une atteinte intestinale directe.
+                        </p>
+                    </div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/19403641/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-terracotta-dark font-bold hover:underline mt-1">
+                        <span>Consulter l'étude sur PubMed (PMID: 19403641)</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <!-- Source 2 -->
+                <li class="bg-white p-4 rounded-2xl border border-sand flex flex-col justify-between gap-2">
+                    <div>
+                        <strong class="text-charcoal text-sm block mb-1">2. Issa B. et al. (2012) — Hypersensibilité viscérale mesurée</strong>
+                        <p class="text-charcoal/80 leading-relaxed">
+                            <em>« Visceral hypersensitivity in endometriosis: a new target for treatment? »</em>, Gut (BMJ). Établit que le seuil de douleur à la distension intestinale est abaissé à 28 mmHg chez les femmes atteintes d'endométriose contre 39,5 mmHg dans le groupe témoin.
+                        </p>
+                    </div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/21782231/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-lavender-dark font-bold hover:underline mt-1">
+                        <span>Consulter l'étude sur PubMed (PMID: 21782231)</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <!-- Source 3 -->
+                <li class="bg-white p-4 rounded-2xl border border-sand flex flex-col justify-between gap-2">
+                    <div>
+                        <strong class="text-charcoal text-sm block mb-1">3. Moore J.S. et al. (2017) — Université Monash & régime pauvre en FODMAP</strong>
+                        <p class="text-charcoal/80 leading-relaxed">
+                            <em>« Endometriosis in patients with irritable bowel syndrome: Specific symptomatic and demographic profile, and response to the low FODMAP diet »</em>. Montre une amélioration significative des symptômes digestifs et ballonnements chez plus de 60 % des patientes.
+                        </p>
+                    </div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/28303579/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sage-dark font-bold hover:underline mt-1">
+                        <span>Consulter l'étude sur PubMed (PMID: 28303579)</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <!-- Source 4 -->
+                <li class="bg-white p-4 rounded-2xl border border-sand flex flex-col justify-between gap-2">
+                    <div>
+                        <strong class="text-charcoal text-sm block mb-1">4. Chiaffarino F. et al. (2021) — Lien Endométriose & Intestin Irritable</strong>
+                        <p class="text-charcoal/80 leading-relaxed">
+                            <em>« Endometriosis and irritable bowel syndrome: a systematic review and meta-analysis »</em>, Archives of Gynecology and Obstetrics. Synthèse portant sur près de 100 000 femmes confirmant un risque environ 3 fois plus élevé de troubles fonctionnels intestinaux.
+                        </p>
+                    </div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/33562131/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-terracotta-dark font-bold hover:underline mt-1">
+                        <span>Consulter la méta-analyse sur PubMed (PMID: 33562131)</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <!-- Source 5 -->
+                <li class="bg-white p-4 rounded-2xl border border-sand flex flex-col justify-between gap-2">
+                    <div>
+                        <strong class="text-charcoal text-sm block mb-1">5. Schomacker M.L. et al. (2018) & Journal of Clinical Medicine (2021)</strong>
+                        <p class="text-charcoal/80 leading-relaxed">
+                            <em>« Pathophysiology of Bowel Symptoms in Endometriosis »</em> — Analyse détaillée du rôle des prostaglandines (PGE2/PGF2α), des cytokines péritonéales et du ralentissement de la motricité digestive pendant les menstruations.
+                        </p>
+                    </div>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/34442573/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-lavender-dark font-bold hover:underline mt-1">
+                        <span>Consulter l'article sur PubMed (PMID: 34442573)</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+
+                <!-- Source 6 -->
+                <li class="bg-white p-4 rounded-2xl border border-sand flex flex-col justify-between gap-2">
+                    <div>
+                        <strong class="text-charcoal text-sm block mb-1">6. Monash University — FODMAP & Endometriosis Research</strong>
+                        <p class="text-charcoal/80 leading-relaxed">
+                            Ressource officielle du département de gastroentérologie de l'Université Monash sur les mécanismes de distension gazeuse et la prise en charge nutritionnelle des ballonnements liés à l'endométriose.
+                        </p>
+                    </div>
+                    <a href="https://www.monashfodmap.com/blog/endometriosis-and-ibs/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sage-dark font-bold hover:underline mt-1">
+                        <span>Voir la page officielle Monash FODMAP</span>
+                        <span>↗</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text-center text-xs text-charcoal/60 pt-4 border-t border-sand">
+                Fait avec attention et bienveillance pour expliquer simplement et scientifiquement ce que traverse ton corps.
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIQUE INTERACTIVE JAVASCRIPT -->
+    <script>
+        let currentStep = 1;
+
+        // 1. Navigation interactive entre les 3 étapes du mécanisme
+        function selectStep(step) {
+            currentStep = step;
+
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`tab-step-${i}`);
+                const content = document.getElementById(`content-step-${i}`);
+                if (i === step) {
+                    btn.classList.add('active');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('active');
+                    content.classList.add('hidden');
+                }
+            }
+
+            // Mise à jour visuelle du schéma SVG
+            const svgInflammation = document.getElementById('svg-inflammation');
+            const svgIntestine = document.getElementById('svg-intestine');
+            const svgGas = document.getElementById('svg-gas');
+            const svgAbdomen = document.getElementById('svg-abdomen');
+
+            if (step === 1) {
+                svgInflammation.style.opacity = '1';
+                svgIntestine.style.opacity = '0.6';
+                svgGas.style.opacity = '0.45';
+                svgAbdomen.setAttribute('d', 'M 45 45 Q 150 25 255 45');
+                svgAbdomen.setAttribute('stroke', '#6B8E78');
+            } else if (step === 2) {
+                svgInflammation.style.opacity = '0.8';
+                svgIntestine.style.opacity = '1';
+                svgGas.style.opacity = '1';
+                svgAbdomen.setAttribute('d', 'M 45 45 Q 150 18 255 45');
+                svgAbdomen.setAttribute('stroke', '#8E7DBE');
+            } else if (step === 3) {
+                svgInflammation.style.opacity = '0.9';
+                svgIntestine.style.opacity = '1';
+                svgGas.style.opacity = '1';
+                svgAbdomen.setAttribute('d', 'M 45 48 Q 150 6 255 48');
+                svgAbdomen.setAttribute('stroke', '#D9776C');
+            }
+        }
+
+        function nextStep() {
+            const next = currentStep < 3 ? currentStep + 1 : 1;
+            selectStep(next);
+        }
+
+        function prevStep() {
+            const prev = currentStep > 1 ? currentStep - 1 : 3;
+            selectStep(prev);
+        }
+
+        // 2. Filtre des conseils de soulagement
+        function filterTips(category) {
+            const groupCrise = document.getElementById('group-crise');
+            const groupPrevention = document.getElementById('group-prevention');
+            const buttons = document.querySelectorAll('.tip-filter');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-white', 'text-charcoal', 'shadow-2xs');
+                btn.classList.add('text-charcoal/80');
+            });
+
+            const activeBtn = document.getElementById(`btn-tip-${category}`);
+            activeBtn.classList.add('bg-white', 'text-charcoal', 'shadow-2xs');
+            activeBtn.classList.remove('text-charcoal/80');
+
+            if (category === 'all') {
+                groupCrise.classList.remove('hidden');
+                groupPrevention.classList.remove('hidden');
+            } else if (category === 'crise') {
+                groupCrise.classList.remove('hidden');
+                groupPrevention.classList.add('hidden');
+            } else if (category === 'prevention') {
+                groupCrise.classList.add('hidden');
+                groupPrevention.classList.remove('hidden');
+            }
+        }
+
+        // 3. Scroll-spy pour le menu en haut à droite (par défaut sur Mécanisme)
+        function initNavHighlight() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sectionIds = ['mecanisme', 'idees-recues', 'etudes', 'soulager', 'anticiper'];
+            const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+            function setActiveNav(id) {
+                navLinks.forEach(link => {
+                    if (link.dataset.nav === id) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            // État initial explicite sur Mécanisme
+            setActiveNav('mecanisme');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    setActiveNav(link.dataset.nav);
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrollPos = window.scrollY + 180;
+                if (window.scrollY < 250) {
+                    setActiveNav('mecanisme');
+                    return;
+                }
+                for (let i = sections.length - 1; i >= 0; i--) {
+                    if (scrollPos >= sections[i].offsetTop) {
+                        setActiveNav(sections[i].id);
+                        break;
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // 4. Initialisation des graphiques Chart.js au chargement
+        window.addEventListener('DOMContentLoaded', () => {
+            initNavHighlight();
+
+            // Graphique 1 : Barres comparatives (Issa et al.)
+            const ctxSens = document.getElementById('sensitivityChart').getContext('2d');
+            new Chart(ctxSens, {
+                type: 'bar',
+                data: {
+                    labels: ['Avec endométriose\n(Hypersensibilité)', 'Groupe témoin\n(Sans endométriose)'],
+                    datasets: [{
+                        label: 'Seuil de douleur (mmHg)',
+                        data: [28, 39.5],
+                        backgroundColor: ['#D9776C', '#6B8E78'],
+                        borderRadius: 12,
+                        barThickness: 54
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#23272A',
+                            padding: 10,
+                            cornerRadius: 10,
+                            callbacks: {
+                                label: (ctx) => ` Seuil ressenti : ${ctx.raw} mmHg`
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 50,
+                            grid: { color: '#F5EFE6' },
+                            ticks: {
+                                font: { family: 'Plus Jakarta Sans', size: 11 },
+                                callback: (v) => v + ' mmHg'
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                font: { family: 'Plus Jakarta Sans', size: 12, weight: '600' },
+                                color: '#23272A'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Graphique 2 : Courbe d'évolution du gonflement sur 28 jours
+            const cycleLabels = [
+                'Fin règles', 'J6', 'J7', 'J8', 'J9', 'J10', 'J11', 'J12', 'J13', 'Ovulation',
+                'J15', 'J16', 'J17', 'J18', 'J19', 'SPM', 'SPM', 'Règles J1', 'Règles J2', 'Règles J3',
+                'Règles J4', 'Règles J5', 'Dégonfle', 'Calme', 'Calme', 'Calme', 'Calme', 'Calme'
+            ];
+            const bloatingLevels = [
+                25, 15, 12, 12, 14, 15, 18, 22, 30, 38,
+                28, 25, 30, 38, 48, 62, 76, 92, 95, 85,
+                68, 48, 30, 18, 14, 12, 12, 12
+            ];
+
+            const ctxCycle = document.getElementById('cycleChart').getContext('2d');
+            const cycleChart = new Chart(ctxCycle, {
+                type: 'line',
+                data: {
+                    labels: cycleLabels,
+                    datasets: [{
+                        label: 'Intensité du gonflement',
+                        data: bloatingLevels,
+                        borderColor: '#D9776C',
+                        backgroundColor: 'rgba(217, 119, 108, 0.16)',
+                        fill: true,
+                        tension: 0.42,
+                        pointRadius: (ctx) => ctx.dataIndex === 18 ? 7 : 2,
+                        pointBackgroundColor: (ctx) => ctx.dataIndex === 18 ? '#A6463C' : '#D9776C',
+                        pointBorderColor: '#FDFBF7',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#23272A',
+                            cornerRadius: 10,
+                            callbacks: {
+                                label: (ctx) => ` Tension abdominale : ${ctx.raw}%`
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 105,
+                            display: false
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                maxTicksLimit: 6,
+                                font: { family: 'Plus Jakarta Sans', size: 11 },
+                                color: '#23272A'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const slider = document.getElementById('cycleSlider');
+            const badge = document.getElementById('cycle-day-badge');
+            const explanation = document.getElementById('cycle-explanation');
+
+            slider.value = 19;
+
+            function updateCycleView(val) {
+                const idx = parseInt(val, 10) - 1;
+                cycleChart.data.datasets[0].pointRadius = (ctx) => ctx.dataIndex === idx ? 8 : 2;
+                cycleChart.data.datasets[0].pointBackgroundColor = (ctx) => ctx.dataIndex === idx ? '#23272A' : '#D9776C';
+                cycleChart.update('none');
+
+                const label = cycleLabels[idx];
+                badge.textContent = label;
+
+                if (idx >= 17 && idx <= 20) {
+                    explanation.innerHTML = '📍 <strong>Pendant les règles :</strong> Pic de prostaglandines et d\'inflammation. Le gonflement est maximal, mais il est temporaire.';
+                } else if (idx >= 14 && idx <= 16) {
+                    explanation.innerHTML = '📍 <strong>Juste avant les règles (SPM) :</strong> La chute hormonale commence à irriter la zone pelvienne, le ventre commence à gonfler.';
+                } else if (idx === 21 || idx === 22 || idx === 0) {
+                    explanation.innerHTML = '📍 <strong>Fin des règles :</strong> L\'orage inflammatoire retombe, l\'œdème se résorbe et le ventre dégonfle progressivement.';
+                } else if (idx >= 8 && idx <= 10) {
+                    explanation.innerHTML = '📍 <strong>Autour de l\'ovulation :</strong> Un léger gonflement passager peut parfois survenir avant de s\'apaiser.';
+                } else {
+                    explanation.innerHTML = '📍 <strong>Phase calme du cycle :</strong> L\'inflammation pelvienne est au repos, le ventre retrouve son volume habituel.';
+                }
+            }
+
+            updateCycleView(19);
+            slider.addEventListener('input', (e) => updateCycleView(e.target.value));
+        });
+    </script>
+</body>
+</html>
